@@ -34,3 +34,13 @@ Download PostgreSQL 9.5.25: https://www.enterprisedb.com/downloads/postgres-post
 Instalação e configuração do PostgreSQL: http://www.bosontreinamentos.com.br/postgresql-banco-dados/instalacao-do-postgresql-no-microsoft-windows/
 
 ---
+
+## Colaborators
+	
+
+[<img src="https://avatars.githubusercontent.com/u/72201119?v=4" width="200px; "/><br><sub><b>Bruna Ribeiro</b></sub>](https://github.com/BrunaRA) |  [<img src="https://avatars.githubusercontent.com/u/15247079?v=4" width="200px;"/><br><sub><b>Jamile Conceição</b></sub>](https://github.com/jamile08) | 	
+:---: | ---
+
+[<img src="https://avatars.githubusercontent.com/u/79553621?s=96&v=4" width="200px;"/><br><sub><b>Lucas Augusto</b></sub>](https://github.com/lucasagw) | 	 [<img src="https://avatars.githubusercontent.com/u/54107073?v=4" width="200px;"/><br><sub><b>Marcony Souza</b></sub>](https://github.com/marconySouza) |
+:---: | ---
+[<img src="https://avatars.githubusercontent.com/u/80589962?v=4" width="200px;"/><br><sub><b>Renata Emily</b></sub>](https://github.com/RenataEmily) | 	 [<img src="https://avatars.githubusercontent.com/u/554178?v=4" width="200px;"/><br><sub><b>Mario Jorge</b></sub>](https://github.com/mariojp) |
