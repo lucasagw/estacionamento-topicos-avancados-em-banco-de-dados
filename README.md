@@ -38,7 +38,7 @@ Instalação e configuração do PostgreSQL: http://www.bosontreinamentos.com.br
 ## Colaborators
 	
 
-[<img src="https://github.com/carlosdevv/" width="200px; "/><br><sub><b>Carlos Lopes</b></sub>](https://github.com/carlosdevv/) |  [<img src="https://avatars.githubusercontent.com/u/15247079?v=4" width="200px;"/><br><sub><b>Jamile Conceição</b></sub>](https://github.com/jamile08) | 	
+[<img src="https://avatars.githubusercontent.com/u/62854228?v=4" width="200px; "/><br><sub><b>Carlos Lopes</b></sub>](https://github.com/carlosdevv/) |  [<img src="https://avatars.githubusercontent.com/u/15247079?v=4" width="200px;"/><br><sub><b>Jamile Conceição</b></sub>](https://github.com/jamile08) | 	
 :---: | ---
 
 [<img src="https://avatars.githubusercontent.com/u/79553621?s=96&v=4" width="200px;"/><br><sub><b>Lucas Augusto</b></sub>](https://github.com/lucasagw) | 	 [<img src="https://avatars.githubusercontent.com/u/55607722?v=4" width="200px;"/><br><sub><b>Luiz Viana</b></sub>](https://github.com/LuizVian4/) |
