@@ -33,6 +33,8 @@ Download PostgreSQL 9.5.25: https://www.enterprisedb.com/downloads/postgres-post
 
 Instalação e configuração do PostgreSQL: http://www.bosontreinamentos.com.br/postgresql-banco-dados/instalacao-do-postgresql-no-microsoft-windows/
 
+Download Postman: https://www.postman.com/downloads/
+
 ---
 
 ## Colaborators
