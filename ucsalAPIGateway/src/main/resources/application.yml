@@ -1,0 +1,64 @@
+server: 
+  port: 8390
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: text/html, text/xml, text/plain, text/css, text/javascript, application/javascript, application/json
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+        - info
+        - health
+        - details
+        - gateway
+
+info:
+  tags:
+    environment: Gateway
+
+spring:
+
+  main:
+    allow-bean-definition-overriding: true
+ 
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedHeaders: "*"
+            allowCredentials : true
+            allowedMethods: "*"
+
+      routes:
+
+      - id: ucsal-api-rest-authorization
+        uri: http://localhost:8399
+        predicates:
+        - Path=/authorizationServer/oauth/**,
+               /authorizationServer/actuator/**
+
+
+      - id: ucsal-api-rest-estacionamento-route
+        uri: http://localhost:8396
+        predicates:
+        - Path=/ucsalAPIRestEstacionamento/cliente/**
+              
+        filters:
+        - AddRequestHeader=ucsal-apirest-estacionamento-request, ucsal-apirest-estacionamento-request-header
+        - AddResponseHeader=ucsal-apirest-estacionamento-response, ucsal-apirest-estacionamento-response-header
+        - name: RequestRateLimiter
+      
+      filter:
+        request-rate-limiter:
+          deny-empty-key: false
+

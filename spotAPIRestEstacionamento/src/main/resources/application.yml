@@ -1,0 +1,66 @@
+server:
+  port: 8396
+  servlet:
+    context-path: /ucsalAPIRestEstacionamento
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: text/html, text/xml, text/plain, text/css, text/javascript, application/javascript, application/json
+    
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+info:
+  tags:
+    environment: Estacionamento
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true 
+  application:
+    name: ucsalAPIRestEstacionamento
+  jpa:
+    properties:
+      hibernate: 
+        jdbc: 
+          lob: 
+           non_contextual_creation: false
+    show-sql: true
+    generate-ddl: true
+  hibernate:
+     ddl-auto: update
+     database: postgresql
+     database-platform: org.hibernate.dialect.PostgreSQLDialect
+     open-in-view: false
+     generate-ddl: true
+         
+  datasource:
+   driver-class-name: org.postgresql.Driver
+   username: postgres
+   password: admin
+   url: jdbc:postgresql://localhost:5432/estacionamento
+   platform: postgres
+   initialization-mode: always
+   continue-on-error: true
+    
+# Logger configuration
+#logging:
+#  pattern:
+#    console: "%d %-5level %logger : %msg%n"
+#  level:
+#    org.springframework: info
+#    org.hibernate: debug
+   
+security: 
+  oauth2: 
+    resource: 
+      token-info-uri: http://localhost:8390/authorizationServer/oauth/check_token
+    client:       
+      client-id: ucsalApp
+      client-secret: 85478aa1-8fae-46cd-8da0-dacd7ec9f561

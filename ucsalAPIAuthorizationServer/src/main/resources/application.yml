@@ -1,0 +1,34 @@
+server:
+  port: 8399
+  servlet:
+    context-path: /authorizationServer
+  compression:
+    enabled: true
+    min-response-size: 256
+    mime-types: text/html, text/xml, text/plain, text/css, text/javascript, application/javascript, application/json
+
+spring:
+  main:
+    allow-circular-references: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+info:
+  tags:
+    environment: Authorization        
+
+
+security:
+    oauth2:
+        client:
+            access-token-validity-seconds: 43200
+            authorized-grant-types: password, refresh_token
+            resource-ids: resources
+            scope: read,write
