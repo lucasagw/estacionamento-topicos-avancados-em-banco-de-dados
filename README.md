@@ -38,9 +38,9 @@ Instalação e configuração do PostgreSQL: http://www.bosontreinamentos.com.br
 ## Colaborators
 	
 
-[<img src="https://avatars.githubusercontent.com/u/72201119?v=4" width="200px; "/><br><sub><b>Bruna Ribeiro</b></sub>](https://github.com/BrunaRA) |  [<img src="https://avatars.githubusercontent.com/u/15247079?v=4" width="200px;"/><br><sub><b>Jamile Conceição</b></sub>](https://github.com/jamile08) | 	
+[<img src="https://github.com/carlosdevv/" width="200px; "/><br><sub><b>Carlos Lopes</b></sub>](https://github.com/carlosdevv/) |  [<img src="https://avatars.githubusercontent.com/u/15247079?v=4" width="200px;"/><br><sub><b>Jamile Conceição</b></sub>](https://github.com/jamile08) | 	
 :---: | ---
 
-[<img src="https://avatars.githubusercontent.com/u/79553621?s=96&v=4" width="200px;"/><br><sub><b>Lucas Augusto</b></sub>](https://github.com/lucasagw) | 	 [<img src="https://avatars.githubusercontent.com/u/54107073?v=4" width="200px;"/><br><sub><b>Marcony Souza</b></sub>](https://github.com/marconySouza) |
+[<img src="https://avatars.githubusercontent.com/u/79553621?s=96&v=4" width="200px;"/><br><sub><b>Lucas Augusto</b></sub>](https://github.com/lucasagw) | 	 [<img src="https://avatars.githubusercontent.com/u/55607722?v=4" width="200px;"/><br><sub><b>Luiz Viana</b></sub>](https://github.com/LuizVian4/) |
 :---: | ---
-[<img src="https://avatars.githubusercontent.com/u/80589962?v=4" width="200px;"/><br><sub><b>Renata Emily</b></sub>](https://github.com/RenataEmily) | 	 [<img src="https://avatars.githubusercontent.com/u/554178?v=4" width="200px;"/><br><sub><b>Mario Jorge</b></sub>](https://github.com/mariojp) |
+[<img src="https://avatars.githubusercontent.com/u/54107073?v=4" width="200px;"/><br><sub><b>Marcony Souza</b></sub>](https://github.com/marconySouza) | 	 [<img src="https://avatars.githubusercontent.com/u/554178?v=4" width="200px;"/><br><sub><b>Mario Jorge</b></sub>](https://github.com/mariojp) |
