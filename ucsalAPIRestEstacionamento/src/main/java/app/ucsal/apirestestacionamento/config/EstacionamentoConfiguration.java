@@ -13,8 +13,7 @@ import app.ucsal.apirestestacionamento.service.EstacionamentoService;
 import app.ucsal.apirestestacionamento.service.ModeloService;
 import app.ucsal.apirestestacionamento.service.OcorrenciaService;
 import app.ucsal.apirestestacionamento.service.PerfilService;
-import app.ucsal.apirestestacionamento.service.PrecoHoraService;
-import app.ucsal.apirestestacionamento.service.PrecoMesService;
+import app.ucsal.apirestestacionamento.service.PrecoService;
 import app.ucsal.apirestestacionamento.service.VagService;
 import app.ucsal.apirestestacionamento.service.VagaStatusService;
 import app.ucsal.apirestestacionamento.service.VeiculoService;
@@ -24,9 +23,9 @@ import app.ucsal.model.geral.Cor;
 import app.ucsal.model.geral.Estacionamento;
 import app.ucsal.model.geral.Modelo;
 import app.ucsal.model.geral.Ocorrencia;
+import app.ucsal.model.geral.OcorrenciaHorista;
 import app.ucsal.model.geral.Perfil;
-import app.ucsal.model.geral.PrecoHora;
-import app.ucsal.model.geral.PrecoMes;
+import app.ucsal.model.geral.Preco;
 import app.ucsal.model.geral.Vaga;
 import app.ucsal.model.geral.VagaStatus;
 import app.ucsal.model.geral.Veiculo;
@@ -37,8 +36,7 @@ import app.ucsal.repository.geral.EstacionamentoRepository;
 import app.ucsal.repository.geral.ModeloRepository;
 import app.ucsal.repository.geral.OcorrenciaRepository;
 import app.ucsal.repository.geral.PerfilRepository;
-import app.ucsal.repository.geral.PrecoHoraRepository;
-import app.ucsal.repository.geral.PrecoMesRepository;
+import app.ucsal.repository.geral.PrecoRepository;
 import app.ucsal.repository.geral.VagaRepository;
 import app.ucsal.repository.geral.VagaStatusRepository;
 import app.ucsal.repository.geral.VeiculoRepository;
@@ -53,8 +51,7 @@ import app.ucsal.repository.geral.VeiculoRepository;
 		ModeloRepository.class,
 		OcorrenciaRepository.class,
 		PerfilRepository.class,
-		PrecoHoraRepository.class,
-		PrecoMesRepository.class,
+		PrecoRepository.class,
 		VagaRepository.class,
 		VagaStatusRepository.class,
 		VeiculoRepository.class
@@ -67,9 +64,9 @@ import app.ucsal.repository.geral.VeiculoRepository;
 		Estacionamento.class,
 		Modelo.class,
 		Ocorrencia.class,
+		OcorrenciaHorista.class,
 		Perfil.class,
-		PrecoHora.class,
-		PrecoMes.class,
+		Preco.class,
 		Vaga.class,
 		VagaStatus.class,
 		Veiculo.class		
@@ -82,8 +79,7 @@ import app.ucsal.repository.geral.VeiculoRepository;
 		ModeloService.class,
 		OcorrenciaService.class,
 		PerfilService.class,
-		PrecoHoraService.class,
-		PrecoMesService.class,
+		PrecoService.class,
 		VagaStatusService.class,
 		VagService.class,
 		VeiculoService.class				

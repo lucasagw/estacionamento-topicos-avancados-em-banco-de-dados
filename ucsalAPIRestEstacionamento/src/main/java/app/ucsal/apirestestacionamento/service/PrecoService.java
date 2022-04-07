@@ -3,11 +3,11 @@ package app.ucsal.apirestestacionamento.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.repository.geral.PrecoHoraRepository;
+import app.ucsal.repository.geral.PrecoRepository;
 
 @Service
-public class PrecoHoraService {
+public class PrecoService {
 
 	@Autowired
-	private PrecoHoraRepository precoHoraRepository;
+	private PrecoRepository precoRepository;
 }
