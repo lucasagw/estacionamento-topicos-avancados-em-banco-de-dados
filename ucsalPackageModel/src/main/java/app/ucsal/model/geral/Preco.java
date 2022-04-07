@@ -18,16 +18,19 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "preco_hora", schema = "public")
-public class PrecoHora implements Serializable {
+@Table(name = "preco_mes", schema = "public")
+public class Preco implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "preco_hora_sequence")
-	@SequenceGenerator(name = "preco_hora_sequence", sequenceName = "public.preco_hora_seq", initialValue = 1, allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "preco_mes_sequence")
+	@SequenceGenerator(name = "preco_mes_sequence", sequenceName = "public.preco_mes_seq", initialValue = 1, allocationSize = 1)
 	private Long id;
+
+	@Column(name = "tipo_preco")
+	private TipoPreco tipoPreco;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "estacionamento_id", referencedColumnName = "id")
@@ -49,6 +52,15 @@ public class PrecoHora implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+
+	public TipoPreco getTipoPreco() {
+		return tipoPreco;
+	}
+
+	public void setTipoPreco(TipoPreco tipoPreco) {
+		this.tipoPreco = tipoPreco;
 	}
 
 	public Estacionamento getEstacionamento() {
@@ -99,7 +111,7 @@ public class PrecoHora implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PrecoHora other = (PrecoHora) obj;
+		Preco other = (Preco) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

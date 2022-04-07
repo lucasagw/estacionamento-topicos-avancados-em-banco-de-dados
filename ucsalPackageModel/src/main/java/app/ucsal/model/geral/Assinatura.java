@@ -34,9 +34,9 @@ public class Assinatura implements Serializable {
 	private Cliente cliente;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "preco_mes_id", referencedColumnName = "id")
+	@JoinColumn(name = "preco_id", referencedColumnName = "id")
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private PrecoMes precoMes;
+	private Preco preco;
 
 	@Column(name = "data_inicio")
 	private LocalDateTime dataInicio;
@@ -60,12 +60,12 @@ public class Assinatura implements Serializable {
 		this.cliente = cliente;
 	}
 
-	public PrecoMes getPrecoMes() {
-		return precoMes;
+	public Preco getPreco() {
+		return preco;
 	}
 
-	public void setPrecoMes(PrecoMes precoMes) {
-		this.precoMes = precoMes;
+	public void setPreco(Preco preco) {
+		this.preco = preco;
 	}
 
 	public LocalDateTime getDataInicio() {

@@ -43,11 +43,6 @@ public class Ocorrencia implements Serializable {
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Vaga vaga;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "preco_hora_id", referencedColumnName = "id")
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private PrecoHora precoHora;
-
 	@Column(name = "entrada")
 	private LocalDateTime entrada;
 
@@ -84,14 +79,6 @@ public class Ocorrencia implements Serializable {
 
 	public void setVaga(Vaga vaga) {
 		this.vaga = vaga;
-	}
-
-	public PrecoHora getPrecoHora() {
-		return precoHora;
-	}
-
-	public void setPrecoHora(PrecoHora precoHora) {
-		this.precoHora = precoHora;
 	}
 
 	public LocalDateTime getEntrada() {
