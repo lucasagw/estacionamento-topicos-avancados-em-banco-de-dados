@@ -14,7 +14,7 @@ Os valores de uso mensal e horário do estacionamento são registrados em uma ta
 
 ### Data Base
 
-<img src="https://i.ibb.co/DLnz8zd/DER-estacionamento.png" alt="DER-estacionamento" border="0">
+<img src="https://i.ibb.co/7jHVTmw/DER-estacionamento-2.png" alt="DER-estacionamento-2" border="0">
 
 ### JPA e Hibernate
 
