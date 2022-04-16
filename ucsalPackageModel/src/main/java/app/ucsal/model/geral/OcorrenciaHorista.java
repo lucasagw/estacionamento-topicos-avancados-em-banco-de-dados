@@ -23,7 +23,7 @@ public class OcorrenciaHorista extends Ocorrencia {
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "preco_id ", referencedColumnName = "id", nullable = true)
+	@JoinColumn(name = "preco_id", referencedColumnName = "id", nullable = true)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Preco preco;
 

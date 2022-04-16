@@ -32,6 +32,11 @@ public class Preco implements Serializable {
 	@SequenceGenerator(name = "preco_mes_sequence", sequenceName = "public.preco_mes_seq", initialValue = 1, allocationSize = 1)
 	private Long id;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "estacionamento_id", referencedColumnName = "id")
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	private Estacionamento estacionamento;
+
 	@Enumerated(EnumType.STRING)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "preco_tipo", referencedColumnName = "tipo")
@@ -40,11 +45,6 @@ public class Preco implements Serializable {
 
 	@Column(name = "preco")
 	private BigDecimal preco;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "estacionamento_id", referencedColumnName = "id")
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private Estacionamento estacionamento;
 
 	@Column(name = "data_inicio")
 	private LocalDateTime dataInicio;
@@ -58,6 +58,14 @@ public class Preco implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Estacionamento getEstacionamento() {
+		return estacionamento;
+	}
+
+	public void setEstacionamento(Estacionamento estacionamento) {
+		this.estacionamento = estacionamento;
 	}
 
 	public PrecoTipo getTipo() {
@@ -74,14 +82,6 @@ public class Preco implements Serializable {
 
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
-	}
-
-	public Estacionamento getEstacionamento() {
-		return estacionamento;
-	}
-
-	public void setEstacionamento(Estacionamento estacionamento) {
-		this.estacionamento = estacionamento;
 	}
 
 	public LocalDateTime getDataInicio() {
