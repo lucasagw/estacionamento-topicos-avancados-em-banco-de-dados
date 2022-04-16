@@ -24,7 +24,7 @@ public class VagaStatus implements Serializable {
 	@Id
 	@Column(name = "status")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vaga_status_sequence")
-	@SequenceGenerator(name = "vaga_status_sequence", sequenceName = "public.vaga_status_seq", initialValue = 1, allocationSize = 1)
+	@SequenceGenerator(name = "vaga_status_sequence", sequenceName = "public.vaga_status_seq")
 	private Status status;
 
 	@Column(name = "descricao")

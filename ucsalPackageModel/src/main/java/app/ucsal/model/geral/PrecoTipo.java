@@ -16,7 +16,7 @@ public class PrecoTipo implements Serializable {
 	@Id
 	@Column(name = "tipo")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "perfil_sequence")
-	@SequenceGenerator(name = "tipo_preco_sequence", sequenceName = "public.tipo_preco_seq", initialValue = 1, allocationSize = 1)
+	@SequenceGenerator(name = "tipo_preco_sequence", sequenceName = "public.tipo_preco_seq")
 	private Preco tipo;
 
 	@Column(name = "descricao")

@@ -24,7 +24,7 @@ public class Perfil implements Serializable {
 	@Id
 	@Column(name = "tipo")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "perfil_sequence")
-	@SequenceGenerator(name = "perfil_sequence", sequenceName = "public.perfil_seq", initialValue = 1, allocationSize = 1)
+	@SequenceGenerator(name = "perfil_sequence", sequenceName = "public.perfil_seq")
 	private Tipo tipo;
 
 	@Column(name = "descricao")

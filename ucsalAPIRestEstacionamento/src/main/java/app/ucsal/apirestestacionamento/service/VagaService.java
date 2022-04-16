@@ -3,11 +3,11 @@ package app.ucsal.apirestestacionamento.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.repository.geral.VagaStatusRepository;
+import app.ucsal.repository.geral.VagaRepository;
 
 @Service
-public class VagaStatusService {
+public class VagaService {
 
 	@Autowired
-	private VagaStatusRepository vagaStatusRepository;
+	private VagaRepository vagaRepository;
 }
