@@ -3,9 +3,12 @@ package app.ucsal.model.geral;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +21,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "preco_mes", schema = "public")
+@Table(name = "preco", schema = "public")
 public class Preco implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -29,16 +32,19 @@ public class Preco implements Serializable {
 	@SequenceGenerator(name = "preco_mes_sequence", sequenceName = "public.preco_mes_seq", initialValue = 1, allocationSize = 1)
 	private Long id;
 
-	@Column(name = "tipo_preco")
-	private TipoPreco tipoPreco;
+	@Enumerated(EnumType.STRING)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "preco_tipo", referencedColumnName = "tipo")
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	private PrecoTipo tipo;
+
+	@Column(name = "preco")
+	private BigDecimal preco;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "estacionamento_id", referencedColumnName = "id")
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Estacionamento estacionamento;
-
-	@Column(name = "preco")
-	private BigDecimal preco;
 
 	@Column(name = "data_inicio")
 	private LocalDateTime dataInicio;
@@ -54,21 +60,12 @@ public class Preco implements Serializable {
 		this.id = id;
 	}
 
-
-	public TipoPreco getTipoPreco() {
-		return tipoPreco;
+	public PrecoTipo getTipo() {
+		return tipo;
 	}
 
-	public void setTipoPreco(TipoPreco tipoPreco) {
-		this.tipoPreco = tipoPreco;
-	}
-
-	public Estacionamento getEstacionamento() {
-		return estacionamento;
-	}
-
-	public void setEstacionamento(Estacionamento estacionamento) {
-		this.estacionamento = estacionamento;
+	public void setTipo(PrecoTipo tipo) {
+		this.tipo = tipo;
 	}
 
 	public BigDecimal getPreco() {
@@ -77,6 +74,14 @@ public class Preco implements Serializable {
 
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
+	}
+
+	public Estacionamento getEstacionamento() {
+		return estacionamento;
+	}
+
+	public void setEstacionamento(Estacionamento estacionamento) {
+		this.estacionamento = estacionamento;
 	}
 
 	public LocalDateTime getDataInicio() {
@@ -97,10 +102,7 @@ public class Preco implements Serializable {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -112,11 +114,6 @@ public class Preco implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Preco other = (Preco) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+		return Objects.equals(id, other.id);
 	}
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +31,7 @@ public class Cliente implements Serializable {
 	@SequenceGenerator(name = "cliente_sequence", sequenceName = "public.cliente_seq", initialValue = 1, allocationSize = 1)
 	private Long id;
 
+	@Enumerated(EnumType.STRING)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "perfil_tipo", referencedColumnName = "tipo")
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

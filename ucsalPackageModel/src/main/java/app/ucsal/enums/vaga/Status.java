@@ -5,11 +5,11 @@ public enum Status {
 	DISPONIVEL("Disponível"), OCUPADO("Ocupado"), INDISPONIVEL("Indisponível");
 
 	private String nome;
+	
 	private String valor;
 
 	private Status(String nome) {
 		this.nome = nome;
-
 	}
 
 	public String getNome() {

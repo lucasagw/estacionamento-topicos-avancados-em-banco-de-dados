@@ -1,14 +1,14 @@
-package app.ucsal.enums.perfil;
+package app.ucsal.enums.preco;
 
-public enum Tipo {
-	
-	MENSALISTA("Mensalita"), Horista("Horista");
+public enum Preco {
 
-	private String nome;
-	
-	private String valor;
+    HORA("HORA"), MENSAL("MENSAL");
 
-	private Tipo(String nome) {
+    private String nome;
+
+    private String valor;
+    
+    private Preco(String nome) {
 		this.nome = nome;
 	}
 

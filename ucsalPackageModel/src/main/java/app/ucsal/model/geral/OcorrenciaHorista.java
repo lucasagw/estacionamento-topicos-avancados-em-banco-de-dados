@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "ocorrencia_horista", schema = "public")
-@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
+@PrimaryKeyJoinColumn(name = "id_horista", referencedColumnName = "id")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class OcorrenciaHorista extends Ocorrencia {
 
