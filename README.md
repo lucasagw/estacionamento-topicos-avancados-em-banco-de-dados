@@ -16,6 +16,8 @@ Os valores de uso mensal e horário do estacionamento são registrados em uma ta
 
 <img src="https://i.ibb.co/7jHVTmw/DER-estacionamento-2.png" alt="DER-estacionamento-2" border="0">
 
+<img src="https://i.ibb.co/hdjHZh5/DER-estacionamento-dbeaver.png" alt="DER-estacionamento-dbeaver" border="0">
+
 ### JPA e Hibernate
 
 JPA significa Java Persistence API. É uma especificação de uma "API Java para gerenciamento de persistência e mapeamento objeto/relacional em ambientes Java EE e Java SE".
