@@ -129,7 +129,7 @@ public class ClienteController {
 			
 			if(Util.isEmpty(parametros.getPerfil()) || Util.isEmpty(parametros.getPerfil().getTipo().getValor())) {
 				
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo Perfil √© obrigat√≥rio"), HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo Perfil È obrigatÛrio"), HttpStatus.BAD_REQUEST);
 		    }
 			
 			return new ResponseEntity<List<Cliente>>(clienteService.getClientesByPerfil(parametros), HttpStatus.OK);
@@ -170,7 +170,7 @@ public class ClienteController {
 			
 			if(Util.isEmpty(parametros.getId()) || parametros.getId() < 1) {
 				
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id √© obrigat√≥rio"), HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id È obrigatÛrio"), HttpStatus.BAD_REQUEST);
 			}
 				
 			clienteService.alterarPerfilCleinte(parametros);
@@ -197,7 +197,7 @@ public class ClienteController {
 	                
 				if (parametrosInvalidos) {
 
-					return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos nome e cpf s√£o obrigat√≥rios"), HttpStatus.BAD_REQUEST);
+					return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos nome e cpf s„o obrigatÛrios"), HttpStatus.BAD_REQUEST);
 				}
 	
 				return new ResponseEntity<Cliente>(clienteService.insert(parametros), HttpStatus.OK);
@@ -224,7 +224,7 @@ public class ClienteController {
 		                
 					if (parametrosInvalidos) {
 
-						return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos id, nome e cpf s√£o obrigat√≥rios"), HttpStatus.BAD_REQUEST);
+						return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos id, nome e cpf s„o obrigatÛrios"), HttpStatus.BAD_REQUEST);
 					}
 
 				return new ResponseEntity<Cliente>(clienteService.update(parametros), HttpStatus.OK);
