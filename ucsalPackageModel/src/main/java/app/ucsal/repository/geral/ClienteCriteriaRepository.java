@@ -41,7 +41,7 @@ public class ClienteCriteriaRepository {
 				predicates.add(criteriaBuilder.like(criteriaBuilder.upper(root.<String>get("nome")), "%" + parametros.getNome().trim().toUpperCase() + "%"));
 			}
 
-			if (!Util.isEmpty(parametros.getPerfil()) && !Util.isEmpty(parametros.getPerfil().getTipo().getValor())) { // ok
+			if (!Util.isEmpty(parametros.getPerfil())) { // ok
 
 				predicates.add(criteriaBuilder.equal(root.<String>get("perfil"), parametros.getPerfil()));
 			}
