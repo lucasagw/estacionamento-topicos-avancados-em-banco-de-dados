@@ -30,6 +30,7 @@ import app.ucsal.model.geral.Vaga;
 import app.ucsal.model.geral.VagaStatus;
 import app.ucsal.model.geral.Veiculo;
 import app.ucsal.repository.geral.AssinaturaRepository;
+import app.ucsal.repository.geral.ClienteCriteriaRepository;
 import app.ucsal.repository.geral.ClienteRepository;
 import app.ucsal.repository.geral.CorRepository;
 import app.ucsal.repository.geral.EstacionamentoRepository;
@@ -86,7 +87,9 @@ import app.ucsal.repository.geral.VeiculoRepository;
 		PerfilService.class,
 		PrecoService.class,
 		VagaService.class,
-		VeiculoService.class				
+		VeiculoService.class,
+		ClienteCriteriaRepository.class
+		
 })
 public class EstacionamentoConfiguration {
 
