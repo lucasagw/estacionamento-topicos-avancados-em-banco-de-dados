@@ -3,6 +3,7 @@ package app.ucsal.apirestestacionamento.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import app.ucsal.model.geral.Cliente;
@@ -17,7 +18,7 @@ public class ClienteService {
 	private ClienteRepository clienteRepository;
 	
 	@Autowired
-	ClienteCriteriaRepository clienteCriteriaRepository;
+	private ClienteCriteriaRepository clienteCriteriaRepository;
 
 	public Cliente findClienteById(Cliente parametros) {
 
@@ -30,7 +31,7 @@ public class ClienteService {
 
 		nome = Util.isEmpty(parametros.getNome()) ? "" : "%" + parametros.getNome() + "%";
 
-		return clienteRepository.getClienteByNome(nome);
+		return clienteRepository.getClienteByNome(nome, PageRequest.of(parametros.getNumeroDaPagina(), parametros.getQuantidadeDeElementos()));
 	}
 
 	public Cliente findClienteByEmail(Cliente parametros) {
@@ -45,12 +46,12 @@ public class ClienteService {
 
 	public List<Cliente> getClientesByPerfil(Cliente parametros) {
 		
-		return clienteRepository.findPedidoByPerfil(parametros.getPerfil());
+		return clienteRepository.findClienteByPerfil(parametros.getPerfil(), PageRequest.of(parametros.getNumeroDaPagina(), parametros.getQuantidadeDeElementos()));
 	}
 
 	public List<Cliente> pesquisar(Cliente parametros) {
 	
-		return clienteCriteriaRepository.pesquisar(parametros);
+		return clienteCriteriaRepository.pesquisar(parametros, PageRequest.of(parametros.getNumeroDaPagina(), parametros.getQuantidadeDeElementos()));
 	}
 
 	public void alterarPerfilCleinte(Cliente parametros) {

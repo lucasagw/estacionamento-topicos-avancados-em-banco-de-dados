@@ -47,7 +47,7 @@ public class ClienteController {
 
 			e.printStackTrace();
 			
-			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint cliente/obter";
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint cliente/findclientebyid";
 			
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}	
@@ -187,8 +187,8 @@ public class ClienteController {
 		}
 	}
 		
-		@PostMapping("/insert") 
-		public ResponseEntity<?> insertCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Cliente parametros) {
+	@PostMapping("/insert") 
+	public ResponseEntity<?> insertCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Cliente parametros) {
 			
 			try {
 				
@@ -213,7 +213,7 @@ public class ClienteController {
 		} 
 		
 		@PutMapping("/update") 
-		public ResponseEntity<?> alterarUsuario(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Cliente parametros) {
+		public ResponseEntity<?> updateCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Cliente parametros) {
 			
 				try {
 					

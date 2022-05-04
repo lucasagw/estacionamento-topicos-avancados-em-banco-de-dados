@@ -3,7 +3,6 @@ package app.ucsal.repository.geral;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -13,6 +12,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import app.ucsal.model.geral.Cliente;
@@ -24,7 +24,7 @@ public class ClienteCriteriaRepository {
 	@PersistenceContext
 	EntityManager entityManager;
 	
-	public List<Cliente> pesquisar(Cliente parametros) {
+	public List<Cliente> pesquisar(Cliente parametros, Pageable pageable) {
 
 		try {
 			
@@ -65,6 +65,11 @@ public class ClienteCriteriaRepository {
 
 			TypedQuery<Cliente> query = entityManager.createQuery(criteriaQuery);
 			
+			if (!Util.isEmpty(pageable)) {
+				
+				query.setFirstResult(pageable.getPageNumber()).setMaxResults(pageable.getPageSize());
+			}
+
 			return query.getResultList();
 
 		} catch (NoResultException e) {

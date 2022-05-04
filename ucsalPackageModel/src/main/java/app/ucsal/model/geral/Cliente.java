@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -53,6 +54,12 @@ public class Cliente implements Serializable {
 
 	@Column(name = "email")
 	private String email;
+	
+	@Transient
+	private Integer quantidadeDeElementos;
+
+	@Transient
+	private Integer numeroDaPagina;
 
 	public Long getId() {
 		return id;
@@ -108,6 +115,22 @@ public class Cliente implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public Integer getQuantidadeDeElementos() {
+		return quantidadeDeElementos;
+	}
+
+	public void setQuantidadeDeElementos(Integer quantidadeDeElementos) {
+		this.quantidadeDeElementos = quantidadeDeElementos;
+	}
+
+	public Integer getNumeroDaPagina() {
+		return numeroDaPagina;
+	}
+
+	public void setNumeroDaPagina(Integer numeroDaPagina) {
+		this.numeroDaPagina = numeroDaPagina;
 	}
 
 	@Override
