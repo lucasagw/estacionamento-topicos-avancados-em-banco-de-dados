@@ -6,6 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import app.ucsal.model.geral.Cliente;
+import app.ucsal.model.geral.Cor;
+import app.ucsal.model.geral.Estacionamento;
+import app.ucsal.model.geral.Modelo;
 import app.ucsal.model.geral.Veiculo;
 
 @Repository
@@ -13,18 +17,17 @@ import app.ucsal.model.geral.Veiculo;
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
 	
 	@Transactional(readOnly = true)
-	Veiculo findByPlaca(String email);
+	Veiculo findByPlaca(String placa);
 	
 	@Transactional(readOnly = true)
-	List<Veiculo> findByCliente(Long id);
+	List<Veiculo> findVeiculoByCliente(Cliente id);
+		
+	@Transactional(readOnly = true)
+	List<Veiculo> findVeiculoByModelo(Modelo id);
 	
 	@Transactional(readOnly = true)
-	List<Veiculo> findByModelo(Long id);
+	List<Veiculo> findVeiculoByCor(Cor id);
 	
 	@Transactional(readOnly = true)
-	List<Veiculo> findByCor(Long id);
-	
-	@Transactional(readOnly = true)
-	List<Veiculo> findByEstacionamento(Long id);
-
+	List<Veiculo> findVeiculoByEstacionamento(Estacionamento id);
 }

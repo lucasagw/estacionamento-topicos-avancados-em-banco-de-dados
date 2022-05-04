@@ -23,19 +23,19 @@ public class VeiculoService {
 	}
 
 	public List<Veiculo> getVeiculosByCliente(Veiculo parametros) {
-		return veiculoRepository.findByCliente(parametros.getCliente().getId());
+		return veiculoRepository.findVeiculoByCliente(parametros.getCliente());
 	}
 
 	public List<Veiculo> getVeiculosByModelo(Veiculo parametros) {
-		return veiculoRepository.findByModelo(parametros.getModelo().getId());
+		return veiculoRepository.findVeiculoByModelo(parametros.getModelo());
 	}
 
 	public List<Veiculo> getVeiculosByCor(Veiculo parametros) {
-		return veiculoRepository.findByCor(parametros.getCor().getId());
+		return veiculoRepository.findVeiculoByCor(parametros.getCor());
 	}
 
 	public List<Veiculo> getVeiculosByEstacionamento(Veiculo parametros) {
-		return veiculoRepository.findByEstacionamento(parametros.getEstacionamento().getId());
+		return veiculoRepository.findVeiculoByEstacionamento(parametros.getEstacionamento());
 	}
 
 	public Veiculo insert(Veiculo parametros) {
