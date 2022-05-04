@@ -47,8 +47,7 @@ public class EstacionamentoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}	
 	}
-	
-	
+		
 	@GetMapping("/getestacionamentobylotacao") 
 	public ResponseEntity<?> getEstacionamentoByLotacao(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
 		
@@ -68,8 +67,7 @@ public class EstacionamentoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}	
 	}
-	
-	
+		
 	@PostMapping("/insert") 
 	public ResponseEntity<?> insertEstacionamento(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Estacionamento parametros) {
 		
@@ -88,7 +86,6 @@ public class EstacionamentoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
 	
 	@PutMapping("/update") 
 	public ResponseEntity<?> updateEstacionamento(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Estacionamento parametros) {

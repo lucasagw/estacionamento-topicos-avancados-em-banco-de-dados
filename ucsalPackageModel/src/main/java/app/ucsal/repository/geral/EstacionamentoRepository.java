@@ -13,6 +13,6 @@ import app.ucsal.model.geral.Estacionamento;
 public interface EstacionamentoRepository extends JpaRepository<Estacionamento, Long> {
 	
 	@Transactional(readOnly = true)
-	List<Estacionamento> findByLotacao(Integer id);
+	List<Estacionamento> findByLotacao(Integer lotacao);
 
 }
