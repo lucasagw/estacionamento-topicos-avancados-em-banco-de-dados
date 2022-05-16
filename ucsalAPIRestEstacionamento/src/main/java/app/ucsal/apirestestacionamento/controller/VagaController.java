@@ -1,7 +1,6 @@
 package app.ucsal.apirestestacionamento.controller;
 
 import java.util.Base64;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +18,6 @@ import com.google.gson.Gson;
 
 import app.ucsal.apirestestacionamento.service.VagaService;
 import app.ucsal.model.geral.Vaga;
-import app.ucsal.model.geral.Veiculo;
 import app.ucsal.util.Erro;
 import app.ucsal.util.Util;
 
@@ -47,7 +45,7 @@ public class VagaController {
 			return new ResponseEntity<Vaga>(vagaService.findVagaById(parametros), HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
-			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint vaga/obter";
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint vaga/obter por id";
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -85,7 +83,7 @@ public class VagaController {
 
 			if (parametrosInvalidos) {
 				return new ResponseEntity<Erro>(
-						new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos status, numero e estacionmento s�o obrigat�rios"),
+						new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos status, numero e estacionmento sao obrigatorios"),
 						HttpStatus.BAD_REQUEST);
 			}
 
