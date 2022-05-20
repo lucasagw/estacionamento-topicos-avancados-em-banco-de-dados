@@ -1,5 +1,7 @@
 package app.ucsal.apirestestacionamento.service;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,14 @@ public class PrecoService {
 	}
 	
 	public Preco update(Preco parametros) {
+		
 		Preco preco = precoRepository.findById(parametros.getId()).get();
+		
 		return precoRepository.save(preco);
+	}
+
+	public Preco getPrecoAtual() {
+		
+		return precoRepository.getPrecoAtual();
 	}
 }

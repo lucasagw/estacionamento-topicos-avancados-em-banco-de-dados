@@ -22,7 +22,10 @@ public class OcorrenciaService {
 	
 	@Autowired
 	private OcorrenciaHoristaRepository ocorrenciaHoristaRepository;
-
+	
+	@Autowired
+	private PrecoService precoService;
+	
 	public Ocorrencia findOcorrenciaById(Ocorrencia parametros) {
 		
 		return ocorrenciaRepository.findById(parametros.getId()).get();
@@ -63,9 +66,10 @@ public class OcorrenciaService {
 	public Ocorrencia updateMensalistaOcorrencia(Ocorrencia parametros) {
 
 		Ocorrencia ocorrencia = ocorrenciaRepository.findById(parametros.getId()).get();
+		
+		ocorrencia.setSaida(LocalDateTime.now());
 
-		return ocorrencia;
-
+		return ocorrenciaRepository.save(ocorrencia);
 	}
 	
 	public OcorrenciaHorista insertHoristaOcorrencia(OcorrenciaHorista parametros) {
@@ -78,8 +82,12 @@ public class OcorrenciaService {
 	public OcorrenciaHorista updateHoristaOcorrencia(OcorrenciaHorista parametros) {
 		
 		OcorrenciaHorista ocorrencia = ocorrenciaHoristaRepository.findById(parametros.getId()).get();
-
-		return ocorrencia;
+		
+		ocorrencia.setSaida(LocalDateTime.now());
+		
+		ocorrencia.setPreco(precoService.getPrecoAtual());
+		
+		return ocorrenciaHoristaRepository.save(ocorrencia);
 	}	
 }
 	
