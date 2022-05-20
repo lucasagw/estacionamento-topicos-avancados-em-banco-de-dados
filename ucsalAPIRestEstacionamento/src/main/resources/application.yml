@@ -57,10 +57,3 @@ spring:
 #    org.springframework: info
 #    org.hibernate: debug
    
-security: 
-  oauth2: 
-    resource: 
-      token-info-uri: http://localhost:8390/authorizationServer/oauth/check_token
-    client:       
-      client-id: ucsalApp
-      client-secret: 85478aa1-8fae-46cd-8da0-dacd7ec9f561

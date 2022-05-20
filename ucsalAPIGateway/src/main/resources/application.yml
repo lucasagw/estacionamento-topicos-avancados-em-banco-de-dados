@@ -41,13 +41,6 @@ spring:
 
       routes:
 
-      - id: ucsal-api-rest-authorization
-        uri: http://localhost:8399
-        predicates:
-        - Path=/authorizationServer/oauth/**,
-               /authorizationServer/actuator/**
-
-
       - id: ucsal-api-rest-estacionamento-route
         uri: http://localhost:8396
         predicates:
