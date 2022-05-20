@@ -57,4 +57,4 @@ Download Postman: https://www.postman.com/downloads/
 
 [<img src="https://avatars.githubusercontent.com/u/79553621?s=96&v=4" width="200px;"/><br><sub><b>Lucas Augusto</b></sub>](https://github.com/lucasagw) | 	 [<img src="https://avatars.githubusercontent.com/u/55607722?v=4" width="200px;"/><br><sub><b>Luiz Viana</b></sub>](https://github.com/LuizVian4/) |
 :---: | ---
-[<img src="https://avatars.githubusercontent.com/u/54107073?v=4" width="200px;"/><br><sub><b>Marcony Souza</b></sub>](https://github.com/marconySouza) | 	 [<img src="https://avatars.githubusercontent.com/u/554178?v=4" width="200px;"/><br><sub><b>Mario Jorge</b></sub>](https://github.com/mariojp) |
+[<img src="https://avatars.githubusercontent.com/u/54107073?v=4" width="200px;"/><br><sub><b>Marcony Souza</b></sub>](https://github.com/marconySouza) | 	 [<img src="https://avatars.githubusercontent.com/u/47950288?v=4" width="200px;"/><br><sub><b>Berman Benjamin</b></sub>](https://github.com/bermanbenjamin) |
