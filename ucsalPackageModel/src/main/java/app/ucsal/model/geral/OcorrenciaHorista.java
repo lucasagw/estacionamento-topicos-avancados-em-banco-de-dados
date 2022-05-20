@@ -26,7 +26,7 @@ public class OcorrenciaHorista extends Ocorrencia {
 	@JoinColumn(name = "preco_id", referencedColumnName = "id", nullable = true)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Preco preco;
-
+	
 	public Preco getPreco() {
 		return preco;
 	}

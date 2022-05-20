@@ -164,7 +164,7 @@ public class ClienteController {
 	}
 	
 	@PutMapping("/alterarperfilcliente") 
-	public ResponseEntity<?> alterarPerfilCleinte(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestBody Cliente parametros) {
+	public ResponseEntity<?> alterarPerfilCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestBody Cliente parametros) {
 		
 		try {
 			

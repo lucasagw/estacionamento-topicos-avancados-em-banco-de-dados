@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import app.ucsal.apirestestacionamento.service.OcorrenciaService;
 import app.ucsal.model.geral.Cliente;
 import app.ucsal.model.geral.Ocorrencia;
+import app.ucsal.model.geral.OcorrenciaHorista;
 import app.ucsal.model.geral.Vaga;
 import app.ucsal.model.geral.Veiculo;
 import app.ucsal.util.Erro;
@@ -176,8 +177,8 @@ public class OcorrenciaController {
 		}	
 	}
 	
-	@PostMapping("/insert") 
-	public ResponseEntity<?> insertOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Ocorrencia parametros) {
+	@PostMapping("/insertmensalista") 
+	public ResponseEntity<?> insertMensalistaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Ocorrencia parametros) {
 		
 		try {
 			
@@ -189,29 +190,28 @@ public class OcorrenciaController {
 					                      parametros.getVeiculo().getId() < 1 ||
 					                      Util.isEmpty(parametros.getVaga()) ||                      
 					                      Util.isEmpty(parametros.getVaga().getId()) ||
-					                      parametros.getVaga().getId() < 1 ||
-					                      Util.isEmpty(parametros.getEntrada()) ||
-					                      Util.isEmpty(parametros.getSaida());		                      				                      
+					                      parametros.getVaga().getId() < 1;
+					                      		                      				                      
          
 			if (parametrosInvalidos) {
 
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos ID Cliente, ID Veiculo, ID Vaga, Data Entrada e Data Saída são obrigatórios"), HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos ID Cliente, ID Veiculo, e ID Vaga são obrigatórios"), HttpStatus.BAD_REQUEST);
 			}
 
-			return new ResponseEntity<Ocorrencia>(ocorrenciaService.insert(parametros), HttpStatus.OK);
+			return new ResponseEntity<Ocorrencia>(ocorrenciaService.insertMensalistaOcorrencia(parametros), HttpStatus.OK);
 		}
 		catch (Exception e) {
 
 			e.printStackTrace();
 			
-			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint ocorrencia/insert";
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint ocorrencia/insertmensalista";
 			
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	} 
 	
-	@PutMapping("/update") 
-	public ResponseEntity<?> updateOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Ocorrencia parametros) {
+	@PutMapping("/updatemensalista") 
+	public ResponseEntity<?> updateMensalistaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Ocorrencia parametros) {
 		
 			try {
 				
@@ -226,22 +226,88 @@ public class OcorrenciaController {
 	                                          parametros.getVeiculo().getId() < 1 ||
 	                                          Util.isEmpty(parametros.getVaga()) ||                      
 	                                          Util.isEmpty(parametros.getVaga().getId()) ||
-	                                          parametros.getVaga().getId() < 1 ||
-	                                          Util.isEmpty(parametros.getEntrada()) ||
-	                                          Util.isEmpty(parametros.getSaida());		                      				                      
+	                                          parametros.getVaga().getId() < 1;		                      				                      
 
 				if (parametrosInvalidos) {
 
 					return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos ID Ocorrencia, ID Cliente, ID Veiculo, ID Vaga, Data Entrada e Data Saída são obrigatórios"), HttpStatus.BAD_REQUEST);
 				}
-
-			return new ResponseEntity<Ocorrencia>(ocorrenciaService.update(parametros), HttpStatus.OK);
+				
+				return new ResponseEntity<Ocorrencia>(ocorrenciaService.updateMensalistaOcorrencia(parametros), HttpStatus.OK);
 		}
 		catch (Exception e) {
 
 			e.printStackTrace();
 			
-			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint ocorrencia/update";
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint ocorrencia/updatemensalista";
+			
+			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@PostMapping("/inserthorista") 
+	public ResponseEntity<?> insertHoristaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody OcorrenciaHorista parametros) {
+		
+		try {
+			
+			boolean parametrosInvalidos = Util.isEmpty(parametros.getCliente()) ||                      
+					                      Util.isEmpty(parametros.getCliente().getId()) ||
+					                      parametros.getCliente().getId() < 1 ||
+					                      Util.isEmpty(parametros.getVeiculo()) ||                      
+					                      Util.isEmpty(parametros.getVeiculo().getId()) ||
+					                      parametros.getVeiculo().getId() < 1 ||
+					                      Util.isEmpty(parametros.getVaga()) ||                      
+					                      Util.isEmpty(parametros.getVaga().getId()) ||
+					                      parametros.getVaga().getId() < 1;
+					                      		                      				                      
+         
+			if (parametrosInvalidos) {
+
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos ID Cliente, ID Veiculo, e ID Vaga são obrigatórios"), HttpStatus.BAD_REQUEST);
+			}
+
+			return new ResponseEntity<OcorrenciaHorista>(ocorrenciaService.insertHoristaOcorrencia(parametros), HttpStatus.OK);
+		}
+		catch (Exception e) {
+
+			e.printStackTrace();
+			
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint ocorrencia/inserthorista";
+			
+			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@PutMapping("/updatehorista") 
+	public ResponseEntity<?> updateHoristaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody OcorrenciaHorista parametros) {
+		
+			try {
+				
+				boolean parametrosInvalidos = Util.isEmpty(parametros.getId()) ||
+						                      parametros.getId() < 1 ||                      
+						                      parametros.getCliente().getId() < 1 ||
+						                      Util.isEmpty(parametros.getCliente()) ||                      
+	                                          Util.isEmpty(parametros.getCliente().getId()) ||
+	                                          parametros.getCliente().getId() < 1 ||
+	                                          Util.isEmpty(parametros.getVeiculo()) ||                      
+	                                          Util.isEmpty(parametros.getVeiculo().getId()) ||
+	                                          parametros.getVeiculo().getId() < 1 ||
+	                                          Util.isEmpty(parametros.getVaga()) ||                      
+	                                          Util.isEmpty(parametros.getVaga().getId()) ||
+	                                          parametros.getVaga().getId() < 1;		                      				                      
+
+				if (parametrosInvalidos) {
+
+					return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos ID Ocorrencia, ID Cliente, ID Veiculo, ID Vaga, Data Entrada e Data Saída são obrigatórios"), HttpStatus.BAD_REQUEST);
+				}
+				
+				return new ResponseEntity<OcorrenciaHorista>(ocorrenciaService.updateHoristaOcorrencia(parametros), HttpStatus.OK);
+		}
+		catch (Exception e) {
+
+			e.printStackTrace();
+			
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint ocorrencia/updatehorista";
 			
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}

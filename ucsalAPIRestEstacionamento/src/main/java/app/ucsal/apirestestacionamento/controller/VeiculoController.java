@@ -29,7 +29,6 @@ public class VeiculoController {
 	@Autowired
 	private VeiculoService veiculoService;
 	
-	
 	@GetMapping("/findveiculobyid") 
 	public ResponseEntity<?> findVeiculoById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
 
@@ -49,7 +48,6 @@ public class VeiculoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}	
 	}
-	
 	
 	@GetMapping("/getveiculosbycliente") 
 	public ResponseEntity<?> getVeiculosByCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
@@ -71,7 +69,6 @@ public class VeiculoController {
 		}	
 	}
 	
-	
 	@GetMapping("/getveiculosbymodelo") 
 	public ResponseEntity<?> getVeiculosByModelo(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
 		
@@ -92,7 +89,6 @@ public class VeiculoController {
 		}	
 	}
 	
-	
 	@GetMapping("/getveiculosbycor") 
 	public ResponseEntity<?> getVeiculosByCor(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
 		
@@ -112,8 +108,7 @@ public class VeiculoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}	
 	}
-	
-	
+		
 	@GetMapping("/getveiculosbyestacionamento") 
 	public ResponseEntity<?> getVeiculosByEstacionamento(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
 		
@@ -133,8 +128,7 @@ public class VeiculoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}	
 	}
-	
-	
+		
 	@GetMapping("/getveiculosbyplaca") 
 	public ResponseEntity<?> getVeiculosByPlaca(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
 		
@@ -154,8 +148,7 @@ public class VeiculoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}	
 	}
-	
-	
+		
 	@PostMapping("/insert") 
 	public ResponseEntity<?> insertVeiculo(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Veiculo parametros) {
 		
@@ -175,7 +168,6 @@ public class VeiculoController {
 			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
 	
 	@PutMapping("/update") 
 	public ResponseEntity<?> updateVeiculo(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Veiculo parametros) {

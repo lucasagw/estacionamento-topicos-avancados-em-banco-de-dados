@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import app.ucsal.model.geral.Cliente;
 import app.ucsal.model.geral.Ocorrencia;
+import app.ucsal.model.geral.OcorrenciaHorista;
 import app.ucsal.model.geral.Vaga;
 import app.ucsal.model.geral.Veiculo;
+import app.ucsal.repository.geral.OcorrenciaHoristaRepository;
 import app.ucsal.repository.geral.OcorrenciaRepository;
 
 @Service
@@ -17,6 +19,9 @@ public class OcorrenciaService {
 
 	@Autowired
 	private OcorrenciaRepository ocorrenciaRepository;
+	
+	@Autowired
+	private OcorrenciaHoristaRepository ocorrenciaHoristaRepository;
 
 	public Ocorrencia findOcorrenciaById(Ocorrencia parametros) {
 		
@@ -47,19 +52,34 @@ public class OcorrenciaService {
 		
 		return ocorrenciaRepository.findOcorrenciaByEntrada(parametros.getEntrada());
 	}
-
-	public Ocorrencia insert(Ocorrencia parametros) {
+	
+	public Ocorrencia insertMensalistaOcorrencia(Ocorrencia parametros) {
 		
 		parametros.setEntrada(LocalDateTime.now());
-		
+
 		return ocorrenciaRepository.save(parametros);
 	}
 	
-	public Ocorrencia update(Ocorrencia parametros) {
+	public Ocorrencia updateMensalistaOcorrencia(Ocorrencia parametros) {
 
-		parametros.setSaida(LocalDateTime.now());
+		Ocorrencia ocorrencia = ocorrenciaRepository.findById(parametros.getId()).get();
 
-		return ocorrenciaRepository.save(parametros);
+		return ocorrencia;
+
 	}
+	
+	public OcorrenciaHorista insertHoristaOcorrencia(OcorrenciaHorista parametros) {
+		
+		parametros.setEntrada(LocalDateTime.now());
+
+		return ocorrenciaHoristaRepository.save(parametros);
+	}
+
+	public OcorrenciaHorista updateHoristaOcorrencia(OcorrenciaHorista parametros) {
+		
+		OcorrenciaHorista ocorrencia = ocorrenciaHoristaRepository.findById(parametros.getId()).get();
+
+		return ocorrencia;
+	}	
 }
 	
