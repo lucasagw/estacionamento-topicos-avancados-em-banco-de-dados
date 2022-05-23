@@ -1,7 +1,5 @@
 package app.ucsal.repository.geral;
 
-import java.math.BigDecimal;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,6 +13,6 @@ public interface PrecoRepository extends JpaRepository<Preco, Long> {
 
 	
 	@Query(value = "SELECT * FROM PRECO" +
-			" WHERE IS NULL DATA_FIM", nativeQuery = true)
+			" WHERE DATA_FIM IS NULL", nativeQuery = true)
 	Preco getPrecoAtual();
 }

@@ -13,5 +13,5 @@ public interface AssinaturaRepository extends JpaRepository<Assinatura, Long> {
 
 	
 	@Transactional(readOnly = true)
-	Assinatura findAssinaturaByCliente(Cliente id);
+	Assinatura findAssinaturaByCliente(Cliente id);	
 }
