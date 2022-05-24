@@ -5,6 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import app.ucsal.model.geral.Cliente;
+import app.ucsal.model.geral.Cor;
+import app.ucsal.model.geral.Estacionamento;
+import app.ucsal.model.geral.Modelo;
 import app.ucsal.model.geral.Veiculo;
 import app.ucsal.repository.geral.VeiculoRepository;
 
@@ -22,20 +26,20 @@ public class VeiculoService {
 		return veiculoRepository.findByPlaca(parametros.getPlaca());
 	}
 
-	public List<Veiculo> getVeiculosByCliente(Veiculo parametros) {
-		return veiculoRepository.findVeiculoByCliente(parametros.getCliente());
+	public List<Veiculo> getVeiculosByCliente(Cliente parametros) {
+		return veiculoRepository.findVeiculoByCliente(parametros);
 	}
 
-	public List<Veiculo> getVeiculosByModelo(Veiculo parametros) {
-		return veiculoRepository.findVeiculoByModelo(parametros.getModelo());
+	public List<Veiculo> getVeiculosByModelo(Modelo parametros) {
+		return veiculoRepository.findVeiculoByModelo(parametros);
 	}
 
-	public List<Veiculo> getVeiculosByCor(Veiculo parametros) {
-		return veiculoRepository.findVeiculoByCor(parametros.getCor());
+	public List<Veiculo> getVeiculosByCor(Cor parametros) {
+		return veiculoRepository.findVeiculoByCor(parametros);
 	}
 
-	public List<Veiculo> getVeiculosByEstacionamento(Veiculo parametros) {
-		return veiculoRepository.findVeiculoByEstacionamento(parametros.getEstacionamento());
+	public List<Veiculo> getVeiculosByEstacionamento(Estacionamento parametros) {
+		return veiculoRepository.findVeiculoByEstacionamento(parametros);
 	}
 
 	public Veiculo insert(Veiculo parametros) {

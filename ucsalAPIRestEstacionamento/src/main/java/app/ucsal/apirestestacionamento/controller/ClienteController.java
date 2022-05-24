@@ -170,7 +170,7 @@ public class ClienteController {
 			
 			if(Util.isEmpty(parametros.getId()) || parametros.getId() < 1) {
 				
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id � obrigat�rio"), HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id é obrigatório"), HttpStatus.BAD_REQUEST);
 			}
 				
 			clienteService.alterarPerfilCleinte(parametros);

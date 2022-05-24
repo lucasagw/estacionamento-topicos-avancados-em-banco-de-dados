@@ -66,7 +66,7 @@ public class OcorrenciaController {
 			
 			if(Util.isEmpty(parametros.getId()) || parametros.getId() < 1) {
 								
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id é obrigatório e não pode ser menor que 1"), HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo ID Cliente é obrigatório"), HttpStatus.BAD_REQUEST);
 			}
 			
 			return new ResponseEntity<List<Ocorrencia>>(ocorrenciaService.getOcorrenciaByCliente(parametros), HttpStatus.OK);
@@ -90,7 +90,7 @@ public class OcorrenciaController {
 			
 			if(Util.isEmpty(parametros.getId()) || parametros.getId() < 1) {
 								
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id é obrigatório e não pode ser menor que 1"), HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo ID Veículo é obrigatório"), HttpStatus.BAD_REQUEST);
 			}
 			
 			return new ResponseEntity<List<Ocorrencia>>(ocorrenciaService.getOcorrenciaByVeiculo(parametros), HttpStatus.OK);
@@ -114,7 +114,7 @@ public class OcorrenciaController {
 			
 			if(Util.isEmpty(parametros.getId()) || parametros.getId() < 1) {
 								
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id é obrigatório e não pode ser menor que 1"), HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo ID Vaga é obrigatório"), HttpStatus.BAD_REQUEST);
 			}
 			
 			return new ResponseEntity<List<Ocorrencia>>(ocorrenciaService.getOcorrenciaByVaga(parametros), HttpStatus.OK);
@@ -217,10 +217,9 @@ public class OcorrenciaController {
 				
 				boolean parametrosInvalidos = Util.isEmpty(parametros.getId()) ||
 						                      parametros.getId() < 1 ||                      
-						                      parametros.getCliente().getId() < 1 ||
-						                      Util.isEmpty(parametros.getCliente()) ||                      
-	                                          Util.isEmpty(parametros.getCliente().getId()) ||
-	                                          parametros.getCliente().getId() < 1 ||
+						                      Util.isEmpty(parametros.getCliente()) || 
+						                      Util.isEmpty(parametros.getCliente().getId()) ||
+						                      parametros.getCliente().getId() < 1 ||						                                        	                          	                              
 	                                          Util.isEmpty(parametros.getVeiculo()) ||                      
 	                                          Util.isEmpty(parametros.getVeiculo().getId()) ||
 	                                          parametros.getVeiculo().getId() < 1 ||
@@ -284,8 +283,7 @@ public class OcorrenciaController {
 			try {
 				
 				boolean parametrosInvalidos = Util.isEmpty(parametros.getId()) ||
-						                      parametros.getId() < 1 ||                      
-						                      parametros.getCliente().getId() < 1 ||
+						                      parametros.getId() < 1 ||                      				              
 						                      Util.isEmpty(parametros.getCliente()) ||                      
 	                                          Util.isEmpty(parametros.getCliente().getId()) ||
 	                                          parametros.getCliente().getId() < 1 ||

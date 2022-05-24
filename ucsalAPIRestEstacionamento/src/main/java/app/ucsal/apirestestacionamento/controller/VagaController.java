@@ -29,47 +29,50 @@ public class VagaController {
 	private VagaService vagaService;
 
 	@GetMapping("/findvagabyid")
-	public ResponseEntity<?> findVagaById(@RequestHeader("ucsal-apirest-estacionamento-request") String header,
-			@RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findVagaById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 
 			Vaga parametros = new Gson().fromJson(new String(Base64.getDecoder().decode(parametrosBase64)), Vaga.class);
 
-			if (Util.isEmpty(parametros.getId()) || parametros.getId() < 1) {
-				return new ResponseEntity<Erro>(
-						new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id é obrigatório e não pode ser menor que 1"),
-						HttpStatus.BAD_REQUEST);
+			if (Util.isEmpty(parametros.getId()) || parametros.getId() < 1) {	
+				
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "O campo id é obrigatório"), HttpStatus.BAD_REQUEST);
 			}
 
 			return new ResponseEntity<Vaga>(vagaService.findVagaById(parametros), HttpStatus.OK);
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
+			
 			e.printStackTrace();
-			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint vaga/obter por id";
-			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem),
-					HttpStatus.INTERNAL_SERVER_ERROR);
+			
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint vaga/findvagabyid";
+			
+			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@PostMapping("/insert")
-	public ResponseEntity<?> insertVaga(@RequestHeader("ucsal-apirest-estacionamento-request") String header,
-			@RequestBody Vaga parametros) {
+	public ResponseEntity<?> insertVaga(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Vaga parametros) {
 
 		try {
-			boolean parametrosInvalidos = Util.isEmpty(parametros.getVagaStatus())
-					|| Util.isEmpty(parametros.getNumero()) || Util.isEmpty(parametros.getEstacionamento());
+			
+			boolean parametrosInvalidos = Util.isEmpty(parametros.getVagaStatus()) || Util.isEmpty(parametros.getNumero()) || Util.isEmpty(parametros.getEstacionamento());
 
 			if (parametrosInvalidos) {
-				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos status, numero e estacionmento são obrigatórios"),
-						HttpStatus.BAD_REQUEST);
+			  
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos status, numero e estacionmento são obrigatórios"), HttpStatus.BAD_REQUEST);
 			}
 
 			return new ResponseEntity<Vaga>(vagaService.insert(parametros), HttpStatus.OK);
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
+			
 			e.printStackTrace();
+			
 			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint vaga/insert";
-			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem),
-					HttpStatus.INTERNAL_SERVER_ERROR);
+			
+			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -78,22 +81,23 @@ public class VagaController {
 			@RequestBody Vaga parametros) {
 
 		try {
-			boolean parametrosInvalidos = Util.isEmpty(parametros.getVagaStatus())
-					|| Util.isEmpty(parametros.getNumero()) || Util.isEmpty(parametros.getEstacionamento());
+			
+			boolean parametrosInvalidos = Util.isEmpty(parametros.getVagaStatus()) || Util.isEmpty(parametros.getNumero()) || Util.isEmpty(parametros.getEstacionamento());
 
 			if (parametrosInvalidos) {
-				return new ResponseEntity<Erro>(
-						new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos status, numero e estacionmento sao obrigatorios"),
-						HttpStatus.BAD_REQUEST);
+				
+				return new ResponseEntity<Erro>(new Erro(HttpStatus.BAD_REQUEST.value(), "Os campos status, numero e estacionmento sao obrigatorios"), HttpStatus.BAD_REQUEST);
 			}
 
 			return new ResponseEntity<Vaga>(vagaService.update(parametros), HttpStatus.OK);
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
+			
 			e.printStackTrace();
+			
 			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint vaga/update";
-			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem),
-					HttpStatus.INTERNAL_SERVER_ERROR);
+			
+			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-
 }

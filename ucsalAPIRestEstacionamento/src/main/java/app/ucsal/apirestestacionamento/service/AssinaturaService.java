@@ -22,4 +22,9 @@ public class AssinaturaService {
 		
 		return assinaturaRepository.findAssinaturaByCliente(parametros);
 	}
+
+	public Assinatura update(Assinatura parametros) {
+	
+		return assinaturaRepository.save(parametros);
+	}
 }

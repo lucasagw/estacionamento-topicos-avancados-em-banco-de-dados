@@ -46,6 +46,23 @@ public class AssinaturaController {
 		}
 	}
 	
+	@PostMapping("/update")
+	public ResponseEntity<?> updateAssinatura(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Assinatura parametros) {
+
+		try {
+
+			return new ResponseEntity<Assinatura>(assinaturaService.update(parametros), HttpStatus.OK);
+		} 
+		catch (Exception e) {
+
+			e.printStackTrace();
+
+			String mensagem = e.getMessage() != null ? e.getMessage() : "Falha no endpoint assinatura/update";
+
+			return new ResponseEntity<Erro>(new Erro(HttpStatus.INTERNAL_SERVER_ERROR.value(), mensagem), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 	@GetMapping("/findassinaturabycliente") 
 	public ResponseEntity<?> findAssinaturaByCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
 
