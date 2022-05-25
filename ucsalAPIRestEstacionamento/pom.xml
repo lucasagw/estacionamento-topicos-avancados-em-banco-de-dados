@@ -22,7 +22,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
 		<java.version>11</java.version>
-        <activeProfile>production</activeProfile>
 	</properties>
 
 	<dependencies>
