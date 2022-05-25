@@ -44,8 +44,14 @@ spring:
       - id: ucsal-api-rest-estacionamento-route
         uri: http://localhost:8396
         predicates:
-        - Path=/ucsalAPIRestEstacionamento/cliente/**
-              
+        - Path=/ucsalAPIRestEstacionamento/cliente/**,
+               /ucsalAPIRestEstacionamento/assinatura/**,
+               /ucsalAPIRestEstacionamento/estacionamento/**,
+               /ucsalAPIRestEstacionamento/ocorrencia/**,
+               /ucsalAPIRestEstacionamento/preco/**,
+               /ucsalAPIRestEstacionamento/vaga/**,
+               /ucsalAPIRestEstacionamento/veiculo/**
+                
         filters:
         - AddRequestHeader=ucsal-apirest-estacionamento-request, ucsal-apirest-estacionamento-request-header
         - AddResponseHeader=ucsal-apirest-estacionamento-response, ucsal-apirest-estacionamento-response-header
