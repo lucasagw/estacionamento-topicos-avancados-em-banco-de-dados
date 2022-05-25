@@ -42,10 +42,10 @@ spring:
          
   datasource:
    driver-class-name: org.postgresql.Driver
-   username: postgres
-   password: admin
-   #url: postgres://hoxkjmzgkykbli:288f2d4c711ef2a7636193139461f109535733bd7b702fc62852baa921c59bac@ec2-54-159-35-35.compute-1.amazonaws.com:5432/d87sq9stf903v7
-   url: jdbc:postgresql://localhost:5432/estacionamento
+   #username: postgres
+   #assword: admin
+   url: postgres://gmfpemxppeinwz:9b01e08ea410239769d98189c8b4d6fb3869013a3ef0cc14362eb3e08f91aff2@ec2-3-228-235-79.compute-1.amazonaws.com:5432/d40kkobfsbcnr3
+   #url: jdbc:postgresql://localhost:5432/estacionamento
    platform: postgres
    initialization-mode: always
    continue-on-error: true
