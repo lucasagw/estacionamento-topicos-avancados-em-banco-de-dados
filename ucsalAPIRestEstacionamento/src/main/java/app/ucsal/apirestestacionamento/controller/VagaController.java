@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +28,7 @@ public class VagaController {
 	private VagaService vagaService;
 
 	@GetMapping("/findvagabyid")
-	public ResponseEntity<?> findVagaById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findVagaById(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 
@@ -53,7 +52,7 @@ public class VagaController {
 	}
 
 	@PostMapping("/insert")
-	public ResponseEntity<?> insertVaga(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Vaga parametros) {
+	public ResponseEntity<?> insertVaga(@RequestBody Vaga parametros) {
 
 		try {
 			
@@ -77,8 +76,7 @@ public class VagaController {
 	}
 
 	@PutMapping("/update")
-	public ResponseEntity<?> updateVaga(@RequestHeader("ucsal-apirest-estacionamento-request") String header,
-			@RequestBody Vaga parametros) {
+	public ResponseEntity<?> updateVaga(@RequestBody Vaga parametros) {
 
 		try {
 			

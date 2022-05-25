@@ -47,6 +47,7 @@
 					<compilerVersion>11</compilerVersion>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>

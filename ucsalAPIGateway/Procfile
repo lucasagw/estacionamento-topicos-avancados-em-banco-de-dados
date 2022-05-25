@@ -1,1 +1,0 @@
-web: java -jar target/ucsalAPIGateway-0.0.1-SNAPSHOT.jar

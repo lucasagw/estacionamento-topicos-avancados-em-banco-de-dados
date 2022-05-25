@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +28,7 @@ public class EstacionamentoController {
 	private EstacionamentoService estacionamentoService;
 	
 	@GetMapping("/findestacionamentobyid") 
-	public ResponseEntity<?> findEstacionamentoById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findEstacionamentoById(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -53,7 +52,7 @@ public class EstacionamentoController {
 	}
 		
 	@PostMapping("/insert") 
-	public ResponseEntity<?> insertEstacionamento(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Estacionamento parametros) {
+	public ResponseEntity<?> insertEstacionamento(@RequestBody Estacionamento parametros) {
 		
 		try {
 			
@@ -77,7 +76,7 @@ public class EstacionamentoController {
 	}
 	
 	@PutMapping("/update") 
-	public ResponseEntity<?> updateEstacionamento(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Estacionamento parametros) {
+	public ResponseEntity<?> updateEstacionamento(@RequestBody Estacionamento parametros) {
 		
 		try {
 			

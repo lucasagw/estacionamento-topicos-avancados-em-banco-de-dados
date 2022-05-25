@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +33,7 @@ public class VeiculoController {
 	private VeiculoService veiculoService;
 	
 	@GetMapping("/findveiculobyid") 
-	public ResponseEntity<?> findVeiculoById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findVeiculoById(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -58,7 +57,7 @@ public class VeiculoController {
 	}
 	
 	@GetMapping("/getveiculosbycliente") 
-	public ResponseEntity<?> getVeiculosByCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getVeiculosByCliente(@RequestParam(name = "parametros") String parametrosBase64) {
 		
 		try {
 			
@@ -82,7 +81,7 @@ public class VeiculoController {
 	}
 	
 	@GetMapping("/getveiculosbymodelo") 
-	public ResponseEntity<?> getVeiculosByModelo(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getVeiculosByModelo(@RequestParam(name = "parametros") String parametrosBase64) {
 		
 		try {
 			
@@ -106,7 +105,7 @@ public class VeiculoController {
 	}
 	
 	@GetMapping("/getveiculosbycor") 
-	public ResponseEntity<?> getVeiculosByCor(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getVeiculosByCor(@RequestParam(name = "parametros") String parametrosBase64) {
 		
 		try {
 			
@@ -130,7 +129,7 @@ public class VeiculoController {
 	}
 		
 	@GetMapping("/getveiculosbyestacionamento") 
-	public ResponseEntity<?> getVeiculosByEstacionamento(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getVeiculosByEstacionamento(@RequestParam(name = "parametros") String parametrosBase64) {
 		
 		try {
 			
@@ -154,7 +153,7 @@ public class VeiculoController {
 	}
 		
 	@GetMapping("/getveiculosbyplaca") 
-	public ResponseEntity<?> getVeiculosByPlaca(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getVeiculosByPlaca(@RequestParam(name = "parametros") String parametrosBase64) {
 		
 		try {
 			
@@ -177,7 +176,7 @@ public class VeiculoController {
 	}
 		
 	@PostMapping("/insert") 
-	public ResponseEntity<?> insertVeiculo(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Veiculo parametros) {
+	public ResponseEntity<?> insertVeiculo(@RequestBody Veiculo parametros) {
 		
 		try {
 			
@@ -201,7 +200,7 @@ public class VeiculoController {
 	}
 	
 	@PutMapping("/update") 
-	public ResponseEntity<?> updateVeiculo(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Veiculo parametros) {
+	public ResponseEntity<?> updateVeiculo(@RequestBody Veiculo parametros) {
 		
 		try {
 			boolean parametrosInvalidos = Util.isEmpty(parametros.getPlaca()) || Util.isEmpty(parametros.getCliente()) ||            

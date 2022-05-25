@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +28,7 @@ public class PrecoController {
 	private PrecoService precoService;
 
 	@GetMapping("/findPrecobyid")
-	public ResponseEntity<?> findPrecoById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findPrecoById(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 
@@ -53,7 +52,7 @@ public class PrecoController {
 	}
 
 	@PostMapping("/insert")
-	public ResponseEntity<?> insertPreco(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Preco parametros) {
+	public ResponseEntity<?> insertPreco(@RequestBody Preco parametros) {
 
 		try {
 			
@@ -80,8 +79,7 @@ public class PrecoController {
 	}
 
 	@PutMapping("/update")
-	public ResponseEntity<?> updatePreco(@RequestHeader("ucsal-apirest-estacionamento-request") String header,
-			@RequestBody Preco parametros) {
+	public ResponseEntity<?> updatePreco(@RequestBody Preco parametros) {
 
 		try {
 			

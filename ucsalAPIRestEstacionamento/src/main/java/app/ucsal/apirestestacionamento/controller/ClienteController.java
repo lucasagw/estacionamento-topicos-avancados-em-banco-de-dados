@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +29,7 @@ public class ClienteController {
 	private ClienteService clienteService;
 
 	@GetMapping("/findclientebyid") 
-	public ResponseEntity<?> findClienteById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findClienteById(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -54,7 +53,7 @@ public class ClienteController {
 	}
 	
 	@GetMapping("/getclientebynome") 
-	public ResponseEntity<?> getClienteByNome(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getClienteByNome(@RequestParam(name = "parametros") String parametrosBase64) {
 		
 		try {
 			
@@ -73,7 +72,7 @@ public class ClienteController {
 	}
 	
 	@GetMapping("/findclientebyemail") 
-	public ResponseEntity<?> findClienteByEmail(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) { // ok
+	public ResponseEntity<?> findClienteByEmail(@RequestParam(name = "parametros") String parametrosBase64) { // ok
 		
 		try {
 			
@@ -97,7 +96,7 @@ public class ClienteController {
 	}
 		
 	@GetMapping("/findclientebycpf") 
-	public ResponseEntity<?> findClienteByCpf(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) { // ok
+	public ResponseEntity<?> findClienteByCpf(@RequestParam(name = "parametros") String parametrosBase64) { // ok
 		
 		try {
 
@@ -121,7 +120,7 @@ public class ClienteController {
 	}
 	
 	@GetMapping("/getclientesbyperfil") 
-	public ResponseEntity<?> getClientesByPerfil(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getClientesByPerfil(@RequestParam(name = "parametros") String parametrosBase64) {
 		
 		try {
 			
@@ -145,7 +144,7 @@ public class ClienteController {
 	}
 	
 	@GetMapping("/pesquisar")
-	public ResponseEntity<?> pesquisar(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) { // ok
+	public ResponseEntity<?> pesquisar(@RequestParam(name = "parametros") String parametrosBase64) { // ok
 		
 		try {
 			
@@ -164,7 +163,7 @@ public class ClienteController {
 	}
 	
 	@PutMapping("/alterarperfilcliente") 
-	public ResponseEntity<?> alterarPerfilCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header,  @RequestBody Cliente parametros) {
+	public ResponseEntity<?> alterarPerfilCliente(@RequestBody Cliente parametros) {
 		
 		try {
 			
@@ -188,7 +187,7 @@ public class ClienteController {
 	}
 		
 	@PostMapping("/insert") 
-	public ResponseEntity<?> insertCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Cliente parametros) {
+	public ResponseEntity<?> insertCliente(@RequestBody Cliente parametros) {
 			
 			try {
 				
@@ -213,7 +212,7 @@ public class ClienteController {
 		} 
 		
 		@PutMapping("/update") 
-		public ResponseEntity<?> updateCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Cliente parametros) {
+		public ResponseEntity<?> updateCliente(@RequestBody Cliente parametros) {
 			
 				try {
 					

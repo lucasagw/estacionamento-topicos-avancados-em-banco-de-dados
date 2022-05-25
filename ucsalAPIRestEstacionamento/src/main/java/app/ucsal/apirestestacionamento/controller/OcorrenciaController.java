@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +33,7 @@ public class OcorrenciaController {
 	private OcorrenciaService ocorrenciaService;
 	
 	@GetMapping("/findocorrenciabyid") 
-	public ResponseEntity<?> findOcorrenciaById(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findOcorrenciaById(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -58,7 +57,7 @@ public class OcorrenciaController {
 	}
 	
 	@GetMapping("/getocorrenciabycliente") 
-	public ResponseEntity<?> getOcorrenciaByCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getOcorrenciaByCliente(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -82,7 +81,7 @@ public class OcorrenciaController {
 	}
 	
 	@GetMapping("/getcorrenciabyveiculo") 
-	public ResponseEntity<?> getOcorrenciaByVeiculo(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getOcorrenciaByVeiculo(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -106,7 +105,7 @@ public class OcorrenciaController {
 	}
 	
 	@GetMapping("/getcorrenciabyvaga") 
-	public ResponseEntity<?> getOcorrenciaByVaga(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getOcorrenciaByVaga(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -130,7 +129,7 @@ public class OcorrenciaController {
 	}
 	
 	@GetMapping("/getcorrenciabydatasaida") 
-	public ResponseEntity<?> getOcorrenciaByDataSaida(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getOcorrenciaByDataSaida(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -154,7 +153,7 @@ public class OcorrenciaController {
 	}
 	
 	@GetMapping("/getcorrenciabydataentrada") 
-	public ResponseEntity<?> getOcorrenciaByDataEntrada(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> getOcorrenciaByDataEntrada(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
@@ -178,7 +177,7 @@ public class OcorrenciaController {
 	}
 	
 	@PostMapping("/insertmensalista") 
-	public ResponseEntity<?> insertMensalistaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Ocorrencia parametros) {
+	public ResponseEntity<?> insertMensalistaOcorrencia(@RequestBody Ocorrencia parametros) {
 		
 		try {
 			
@@ -211,7 +210,7 @@ public class OcorrenciaController {
 	} 
 	
 	@PutMapping("/updatemensalista") 
-	public ResponseEntity<?> updateMensalistaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Ocorrencia parametros) {
+	public ResponseEntity<?> updateMensalistaOcorrencia(@RequestBody Ocorrencia parametros) {
 		
 			try {
 				
@@ -245,7 +244,7 @@ public class OcorrenciaController {
 	}
 	
 	@PostMapping("/inserthorista") 
-	public ResponseEntity<?> insertHoristaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody OcorrenciaHorista parametros) {
+	public ResponseEntity<?> insertHoristaOcorrencia(@RequestBody OcorrenciaHorista parametros) {
 		
 		try {
 			
@@ -278,7 +277,7 @@ public class OcorrenciaController {
 	}
 	
 	@PutMapping("/updatehorista") 
-	public ResponseEntity<?> updateHoristaOcorrencia(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody OcorrenciaHorista parametros) {
+	public ResponseEntity<?> updateHoristaOcorrencia(@RequestBody OcorrenciaHorista parametros) {
 		
 			try {
 				

@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +29,7 @@ public class AssinaturaController {
 	AssinaturaService assinaturaService;
 	
 	@PostMapping("/insert")
-	public ResponseEntity<?> insertAssinatura(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Assinatura parametros) {
+	public ResponseEntity<?> insertAssinatura(@RequestBody Assinatura parametros) {
 
 		try {
 
@@ -47,7 +46,7 @@ public class AssinaturaController {
 	}
 	
 	@PostMapping("/update")
-	public ResponseEntity<?> updateAssinatura(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestBody Assinatura parametros) {
+	public ResponseEntity<?> updateAssinatura(@RequestBody Assinatura parametros) {
 
 		try {
 
@@ -64,7 +63,7 @@ public class AssinaturaController {
 	}
 	
 	@GetMapping("/findassinaturabycliente") 
-	public ResponseEntity<?> findAssinaturaByCliente(@RequestHeader("ucsal-apirest-estacionamento-request") String header, @RequestParam(name = "parametros") String parametrosBase64) {
+	public ResponseEntity<?> findAssinaturaByCliente(@RequestParam(name = "parametros") String parametrosBase64) {
 
 		try {
 			
