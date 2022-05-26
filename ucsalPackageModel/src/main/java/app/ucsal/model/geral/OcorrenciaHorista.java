@@ -11,16 +11,21 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import app.ucsal.model.geral.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "ocorrencia_horista", schema = "public")
-@PrimaryKeyJoinColumn(name = "ocorrencia_id", referencedColumnName = "id")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class OcorrenciaHorista extends Ocorrencia {
 
 	private static final long serialVersionUID = 1L;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ocorrencia_id", referencedColumnName = "id", nullable = true)
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	private Ocorrencia ocorrenciaId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "preco_id", referencedColumnName = "id", nullable = true)
