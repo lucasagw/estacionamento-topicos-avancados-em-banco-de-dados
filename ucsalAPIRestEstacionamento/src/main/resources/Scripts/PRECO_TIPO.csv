@@ -1,3 +1,2 @@
-tipo,descricao
-horista,Preco Horista
-mensalista,Preco Mensalista
+HORA,Valor pagamento hora
+MENSAL,Valor pagamento mensalidade
