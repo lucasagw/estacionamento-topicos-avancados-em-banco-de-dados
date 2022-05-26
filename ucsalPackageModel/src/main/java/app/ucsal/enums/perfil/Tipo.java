@@ -2,7 +2,7 @@ package app.ucsal.enums.perfil;
 
 public enum Tipo {
 	
-	MENSALISTA("Mensalita"), Horista("Horista");
+	MENSALISTA("Mensalita"), HORISTA("Horista");
 
 	private String nome;
 	
