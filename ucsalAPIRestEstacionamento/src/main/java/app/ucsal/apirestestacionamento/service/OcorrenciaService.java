@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.model.geral.Cliente;
-import app.ucsal.model.geral.Ocorrencia;
-import app.ucsal.model.geral.OcorrenciaHorista;
-import app.ucsal.model.geral.Vaga;
-import app.ucsal.model.geral.Veiculo;
-import app.ucsal.repository.geral.OcorrenciaHoristaRepository;
-import app.ucsal.repository.geral.OcorrenciaRepository;
+import app.ucsal.apirestestacionamento.model.geral.Cliente;
+import app.ucsal.apirestestacionamento.model.geral.Ocorrencia;
+import app.ucsal.apirestestacionamento.model.geral.OcorrenciaHorista;
+import app.ucsal.apirestestacionamento.model.geral.Vaga;
+import app.ucsal.apirestestacionamento.model.geral.Veiculo;
+import app.ucsal.apirestestacionamento.repository.geral.OcorrenciaHoristaRepository;
+import app.ucsal.apirestestacionamento.repository.geral.OcorrenciaRepository;
 
 @Service
 public class OcorrenciaService {

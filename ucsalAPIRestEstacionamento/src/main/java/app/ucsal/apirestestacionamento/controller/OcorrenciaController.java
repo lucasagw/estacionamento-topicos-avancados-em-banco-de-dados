@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
+import app.ucsal.apirestestacionamento.model.geral.Cliente;
+import app.ucsal.apirestestacionamento.model.geral.Ocorrencia;
+import app.ucsal.apirestestacionamento.model.geral.OcorrenciaHorista;
+import app.ucsal.apirestestacionamento.model.geral.Vaga;
+import app.ucsal.apirestestacionamento.model.geral.Veiculo;
 import app.ucsal.apirestestacionamento.service.OcorrenciaService;
-import app.ucsal.model.geral.Cliente;
-import app.ucsal.model.geral.Ocorrencia;
-import app.ucsal.model.geral.OcorrenciaHorista;
-import app.ucsal.model.geral.Vaga;
-import app.ucsal.model.geral.Veiculo;
 import app.ucsal.util.Erro;
 import app.ucsal.util.Util;
 

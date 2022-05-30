@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
+import app.ucsal.apirestestacionamento.model.geral.Vaga;
 import app.ucsal.apirestestacionamento.service.VagaService;
-import app.ucsal.model.geral.Vaga;
 import app.ucsal.util.Erro;
 import app.ucsal.util.Util;
 

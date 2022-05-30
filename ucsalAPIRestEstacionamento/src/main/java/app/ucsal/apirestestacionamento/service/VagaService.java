@@ -3,8 +3,8 @@ package app.ucsal.apirestestacionamento.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.model.geral.Vaga;
-import app.ucsal.repository.geral.VagaRepository;
+import app.ucsal.apirestestacionamento.model.geral.Vaga;
+import app.ucsal.apirestestacionamento.repository.geral.VagaRepository;
 
 @Service
 public class VagaService {

@@ -3,8 +3,8 @@ package app.ucsal.apirestestacionamento.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.model.geral.Estacionamento;
-import app.ucsal.repository.geral.EstacionamentoRepository;
+import app.ucsal.apirestestacionamento.model.geral.Estacionamento;
+import app.ucsal.apirestestacionamento.repository.geral.EstacionamentoRepository;
 
 @Service
 public class EstacionamentoService {

@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.model.geral.Cliente;
-import app.ucsal.model.geral.Cor;
-import app.ucsal.model.geral.Estacionamento;
-import app.ucsal.model.geral.Modelo;
-import app.ucsal.model.geral.Veiculo;
-import app.ucsal.repository.geral.VeiculoRepository;
+import app.ucsal.apirestestacionamento.model.geral.Cliente;
+import app.ucsal.apirestestacionamento.model.geral.Cor;
+import app.ucsal.apirestestacionamento.model.geral.Estacionamento;
+import app.ucsal.apirestestacionamento.model.geral.Modelo;
+import app.ucsal.apirestestacionamento.model.geral.Veiculo;
+import app.ucsal.apirestestacionamento.repository.geral.VeiculoRepository;
 
 @Service
 public class VeiculoService {

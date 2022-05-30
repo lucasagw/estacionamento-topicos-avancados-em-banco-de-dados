@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.model.geral.Cliente;
-import app.ucsal.repository.geral.ClienteCriteriaRepository;
-import app.ucsal.repository.geral.ClienteRepository;
+import app.ucsal.apirestestacionamento.model.geral.Cliente;
+import app.ucsal.apirestestacionamento.repository.geral.ClienteCriteriaRepository;
+import app.ucsal.apirestestacionamento.repository.geral.ClienteRepository;
 import app.ucsal.util.Util;
 
 @Service

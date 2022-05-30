@@ -109,7 +109,7 @@ id,cpf,nome,email,telefone,estacionamento_id,perfil_tipo
 108,2410679765,Zahara Tallach,ztallach2z@illinois.edu,7605175246,44,HORISTA
 109,343878364,Robinson Faraday,rfaraday30@studiopress.com,1578562222,55,MENSALISTA
 110,6027388242,Sandy Drover,sdrover31@wisc.edu,2421004471,92,MENSALISTA
-111,2602255726,Hubert Ruddle,hruddle32@about.com,4608804400,0,HORISTA
+111,2602255726,Hubert Ruddle,hruddle32@about.com,4608804400,1,HORISTA
 112,7603473543,Roshelle Craigmile,rcraigmile33@ustream.tv,9313115019,29,MENSALISTA
 113,9482276027,Abigael Corless,acorless34@elpais.com,2682845353,52,HORISTA
 114,2826744046,Lonee Rodenborch,lrodenborch35@apple.com,4579803985,96,HORISTA
@@ -123,7 +123,7 @@ id,cpf,nome,email,telefone,estacionamento_id,perfil_tipo
 122,4898042163,Janna Schulze,jschulze3d@sourceforge.net,5755609732,58,HORISTA
 123,2683408277,Ricardo Girdlestone,rgirdlestone3e@plala.or.jp,4691694464,88,MENSALISTA
 124,9161198986,Marja Kennelly,mkennelly3f@zimbio.com,7109310002,97,MENSALISTA
-125,6174874370,Sayre Bilsborrow,sbilsborrow3g@clickbank.net,3541185444,0,MENSALISTA
+125,6174874370,Sayre Bilsborrow,sbilsborrow3g@clickbank.net,3541185444,1,MENSALISTA
 126,6719534424,Hastie McGawn,hmcgawn3h@bizjournals.com,9323175718,7,MENSALISTA
 127,4517691489,Reyna Dacre,rdacre3i@cocolog-nifty.com,3789260133,41,HORISTA
 128,1952770297,Eada Coppenhall,ecoppenhall3j@microsoft.com,2704363752,91,MENSALISTA
@@ -158,7 +158,7 @@ id,cpf,nome,email,telefone,estacionamento_id,perfil_tipo
 157,1852482125,Meagan Losano,mlosano4c@reverbnation.com,8612200931,94,HORISTA
 158,3494204047,Dickie Jeffers,djeffers4d@japanpost.jp,4944995735,28,MENSALISTA
 159,2908901161,Pepito Elcomb,pelcomb4e@bizjournals.com,2101565007,9,MENSALISTA
-160,3840774616,Sonny Borless,sborless4f@ow.ly,2942932951,0,MENSALISTA
+160,3840774616,Sonny Borless,sborless4f@ow.ly,2942932951,2,MENSALISTA
 161,6067590913,Persis Nelius,pnelius4g@mashable.com,6522358572,26,MENSALISTA
 162,6769923300,Margie Tilliard,mtilliard4h@webmd.com,8702535686,81,HORISTA
 163,3281222056,Phillipe Guess,pguess4i@chronoengine.com,7953734745,25,HORISTA
@@ -660,7 +660,7 @@ id,cpf,nome,email,telefone,estacionamento_id,perfil_tipo
 659,220459495,Tobi Crebo,tcreboia@latimes.com,9117851120,66,MENSALISTA
 660,8860424275,Clare Welbelove,cwelbeloveib@sphinn.com,3994037431,73,HORISTA
 661,2722043904,Miguelita Hewell,mhewellic@fastcompany.com,8466198736,55,MENSALISTA
-662,4334657494,Johnette Huyghe,jhuygheid@paginegialle.it,8507882720,0,HORISTA
+662,4334657494,Johnette Huyghe,jhuygheid@paginegialle.it,8507882720,5,HORISTA
 663,2939514968,Lyndell Giacomello,lgiacomelloie@apple.com,1473213949,88,MENSALISTA
 664,8406999462,Gert Barrie,gbarrieif@va.gov,3509770380,70,HORISTA
 665,5869537800,Stacie Gatcliff,sgatcliffig@fema.gov,3856914566,1,HORISTA
@@ -883,7 +883,7 @@ id,cpf,nome,email,telefone,estacionamento_id,perfil_tipo
 882,2827961555,Hubert Collidge,hcollidgeoh@wordpress.com,8238924108,13,HORISTA
 883,4103077247,Bevvy Matuszyk,bmatuszykoi@cam.ac.uk,3703643976,34,HORISTA
 884,3111746402,Markos MacKall,mmackalloj@amazon.de,4402383393,55,MENSALISTA
-885,6215743704,Petronilla Oulett,poulettok@myspace.com,1173145208,0,MENSALISTA
+885,6215743704,Petronilla Oulett,poulettok@myspace.com,1173145208,5,MENSALISTA
 886,5434108620,Vonny Adrain,vadrainol@imageshack.us,1331373582,7,HORISTA
 887,4419116307,Karlik Goodley,kgoodleyom@home.pl,3395210906,16,MENSALISTA
 888,8941848881,Demetri Waterland,dwaterlandon@exblog.jp,4764674921,85,MENSALISTA

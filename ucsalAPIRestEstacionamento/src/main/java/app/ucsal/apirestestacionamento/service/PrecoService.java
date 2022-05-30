@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.ucsal.model.geral.Preco;
-import app.ucsal.repository.geral.PrecoRepository;
+import app.ucsal.apirestestacionamento.model.geral.Preco;
+import app.ucsal.apirestestacionamento.repository.geral.PrecoRepository;
 
 @Service
 public class PrecoService {
