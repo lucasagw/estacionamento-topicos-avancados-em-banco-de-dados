@@ -44,7 +44,7 @@ spring:
    driver-class-name: org.postgresql.Driver
    #username: postgres
    #password: admin
-   url: postgres://jpujfjujwrtssj:81d83e12be2a2e9f408fcd25814f54f517d6461f1b3995c637ddd1c5cef25dde@ec2-54-165-178-178.compute-1.amazonaws.com:5432/d2v0fj0t4doiqo
+   url: postgres://zuohpkuyqqkghu:43444de19c72eb6f79e0eab7ffc921b2a8590a57deb96e44bc249bbb9bb38c57@ec2-3-234-131-8.compute-1.amazonaws.com:5432/d685ktr8cqmaop
    #url: jdbc:postgresql://localhost:5432/estacionamento
    platform: postgres
    initialization-mode: always
